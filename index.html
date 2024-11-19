@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulatore Email - Esercizio Pratico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="punteggio">Punteggio: <span id="score">0</span></div>
+
+    <div class="istruzioni">
+        <h2>Gestione Email</h2>
+        <ol>
+            <li>Identifica le email sospette</li>
+            <li>Organizza i messaggi nelle cartelle corrette</li>
+            <li>Componi una nuova email seguendo le buone pratiche</li>
+        </ol>
+    </div>
+
+    <div class="email-client">
+        <div class="sidebar">
+            <div class="folders">
+                <div class="folder active">Posta in arrivo</div>
+                <div class="folder">Lavoro</div>
+                <div class="folder">Personale</div>
+                <div class="folder">Spam</div>
+            </div>
+            <button class="new-email-btn">Nuovo Messaggio</button>
+        </div>
+
+        <div class="main-content">
+            <div class="email-list">
+                <!-- Le email verranno generate dinamicamente -->
+            </div>
+
+            <div class="compose-email" style="display: none;">
+                <h3>Nuovo Messaggio</h3>
+                <input type="text" placeholder="A:" id="to-field">
+                <input type="text" placeholder="Oggetto:" id="subject-field">
+                <textarea placeholder="Scrivi il tuo messaggio qui..." id="message-field"></textarea>
+                <div class="email-actions">
+                    <button onclick="verificaEmail()">Invia</button>
+                    <button onclick="chiudiComposizione()">Annulla</button>
+                </div>
+            </div>
+
+            <div class="email-detail" style="display: none;">
+                <div class="email-header">
+                    <div class="email-from"></div>
+                    <div class="email-subject"></div>
+                    <div class="email-date"></div>
+                </div>
+                <div class="email-body"></div>
+                <div class="email-actions">
+                    <button onclick="identificaSpam()">Spam</button>
+                    <button onclick="spostaEmail()">Sposta in...</button>
+                    <button onclick="rispondi()">Rispondi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
